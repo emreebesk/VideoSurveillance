@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Video Stream</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+<body>
+    <h1>EMRE BEŞİK UI IN STREAMING RN!!!</h1>
+    <video id="hls_video" controls autoplay>
+        <source src="http://13.95.143.155/hls/stream.m3u8" type="application/vnd.apple.mpegurl">
+        Your browser does not support the video tag.
+    </video>
+    <script>
+        var video = document.getElementById('hls_video');
+        if (Hls.isSupported()) {
+            var hls = new Hls();
+            hls.loadSource('http://13.95.143.155/hls/stream.m3u8');
+            hls.attachMedia(video);
+            hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                video.play();
+            });
+        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+            video.src = 'http://13.95.143.155/hls/stream.m3u8';
+            video.addEventListener('loadedmetadata', function () {
+                video.play();
+            });
+        }
+    </script>
+</body>
+</html>
