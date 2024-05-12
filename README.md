@@ -1,2 +1,28 @@
-# VideoSurveillance
-You will need a camera like a webcam (built-in or a USB one) that is attached to your server where you will be running an HTTP server (e.g., Apache or NGINX). The goal is to capture real-time video, encode it and store it on the server. Viewers using a Web client (in the browser) should be able to connect to the server and watch the live video.
+Live Video Streaming with Nginx and FFmpeg
+
+**Project Description**
+This project enables live video streaming using Nginx and FFmpeg on a virtual machine. Users initiate the video stream by running a Python script on their local computer, and the stream is broadcasted through a cloud-based VM.
+
+****Getting Started****
+**Prerequisites**
+To use this project, the following software needs to be installed:
+
+#
+*Nginx
+*FFmpeg
+*Python 3.x
+#
+
+**Installation**
+**1.Installing Nginx and FFmpeg:** Install Nginx and FFmpeg on the VM.
+-> sudo apt update
+-> sudo apt install nginx ffmpeg
+
+**2. Nginx Configuration:** Add the necessary RTMP module and HLS settings to the nginx.conf file.
+**3.Replacing the HTML File:** Replace the HTML file in the root directory of Nginx with the index.html provided in this repository.
+
+****USAGE****
+# 1. Start Nginx on the VM: "sudo systemctl start nginx"
+# 2. Start the video stream by running the Python script on your local machine: "python main.py"
+
+
